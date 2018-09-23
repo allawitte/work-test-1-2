@@ -1,0 +1,26 @@
+<div class="container  cards d-flex flex-wrap justify-content-center">
+    <div class="card d-flex"  ng-repeat="card in vm.showList" ng-class="vm.isToday(card.dt_txt)">
+        <img class="card-img-top" src="https://openweathermap.org/img/w/{{card.weather[0].icon}}.png" alt="{{card.weather[0].description}}">
+        <div class="card-body">
+            <p>Минимальная температура: {{vm.getTemperature(card.main.temp_min - 273.15)}} °C</p>
+            <p>Максимальная температура: {{vm.getTemperature(card.main.temp_max - 273.15)}} °C</p>
+            <p>Влажность: {{card.wind.humidity}} %</p>
+        </div>
+    </div>
+</div>
+<div class="preloader" ng-if="vm.isVisible">
+    <div class="lds-spinner">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Погода в городах России</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div ng-app="weatherApp" ng-controller="mainController as vm" class="container">
+    <header class="header" ng-class="vm.topClass">
+        <h1 class="top text-center">У природы нет плохой погоды</h1>
+    <div class="jumbotron d-flex justify-content-center">
+        <div class="hours">{{vm.hours}}</div>
+        :
+        <div class="minutes">{{vm.minutes}}</div>
+        :
+        <div class="seconds">{{vm.seconds}}</div>
+    </div>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="/moscow">Москва</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="/piter">Санкт-Петербург</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" ui-sref-active="active" ui-sref="/eburg">Екатеринабург</a>
+        </li>
+    </ul>
+    </header>
+    <div ui-view></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.20/angular-ui-router.js"></script>
+<script src="js/main.js"></script>
+<script src="js/routing.js"></script>
+<script src="js/cityController.js"></script>
+</body>
+</html>
