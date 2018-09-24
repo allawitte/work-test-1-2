@@ -9,7 +9,7 @@
 </head>
 <body>
 <div ng-app="weatherApp" ng-controller="mainController as vm" class="container">
-    <header class="header" ng-class="vm.topClass">
+    <header class="header" >
         <h1 class="top text-center">У природы нет плохой погоды</h1>
     <div class="jumbotron d-flex justify-content-center">
         <div class="hours">{{vm.hours}}</div>
@@ -18,7 +18,7 @@
         :
         <div class="seconds">{{vm.seconds}}</div>
     </div>
-    <ul class="nav nav-pills nav-fill">
+    <ul class="nav nav-pills nav-fill" ng-class="vm.topClass">
         <li class="nav-item">
             <a class="nav-link" ui-sref-active="active" ui-sref="/moscow">Москва</a>
         </li>

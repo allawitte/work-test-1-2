@@ -19,7 +19,7 @@ function mainController($timeout, $window) {
     };
     updateCounter();
     angular.element($window).bind("scroll", function() {
-        if(this.pageYOffset > 40){
+        if(this.pageYOffset > 100){
             vm.topClass = 'scrolled';
         }
         else {
